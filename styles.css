@@ -1,0 +1,260 @@
+:root {
+  /* colors */
+  --yellow: rgb(243, 178, 0);
+  --blue: rgb(47, 136, 219);
+  --light-gray: rgb(219, 219, 219);
+  --gray: rgb(184, 184, 184);
+  --dark-gray: rgb(75, 75, 75);
+  --white: rgb(245,245,245);
+  --black: rgb(40,40,40);
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.size-xs {
+  font-size: 0.9rem;
+}
+
+.size-s {
+  font-size: 1rem;
+}
+
+.size-m {
+  font-size: 1.5rem;
+}
+
+.size-l {
+  font-size: 2rem;
+}
+
+.size-xl {
+  font-size: 3rem;
+}
+
+.size-xxl {
+  font-size: 4rem;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.bolder {
+  font-weight: 800;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+h4 {
+  margin-bottom: 5px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: minmax(max-content, 1fr) 5fr;
+  grid-template-rows: max-content 5fr;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* header section */
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(max-content, 1fr));
+  grid-template-rows: 1fr 2fr;
+  gap: 20px;
+  align-items: baseline;
+  padding: 30px;
+  background-color: var(--white);
+  color: var(--black);
+  box-shadow: 0px 3px 5px var(--gray);
+  z-index: 1;
+}
+
+.searchbar {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 20px;
+}
+
+.textfield {
+  width: 10rem;
+  height: 1.5rem;
+  padding-left: 1rem;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--light-gray);
+  transition: width 200ms ease-out;
+}
+
+.textfield:focus {
+  width: 20rem;
+}
+
+.user-info {
+  display: grid;
+  grid-template-columns: repeat(3, max-content); 
+  gap: 20px;
+  justify-content: end;
+  align-items: center;
+}
+
+.greeting {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 10px;
+  align-items: center;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 20px;
+  justify-content: end;
+  align-items: center;
+}
+
+button {
+  width: 6rem;
+  padding: 0.5rem;
+  border: 2px solid var(--blue);
+  border-radius: 20px;
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+button:hover {
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+/* sidebar section */
+
+.sidebar {
+  grid-row: 1 / span 2;
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.barsection {
+  display: grid;
+  padding-bottom: 4rem;
+}
+
+.barsection span {
+  padding-right: 1rem;
+}
+
+.branding,
+.baritem {
+  padding: 20px;
+}
+
+.baritem:hover {
+  background-color: var(--light-gray);
+  color: var(--blue);
+}
+
+/* content section */
+
+.content {
+  display: grid;
+  grid-template-columns: 4fr minmax(300px, 1fr);
+  grid-auto-rows: max-content;
+  gap: 30px;
+  padding: 30px 30px 0px 30px;
+  background-color: var(--light-gray);
+}
+
+.projects {
+  grid-column: 1 / 2;
+  grid-row: 1 / span 3;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: 1fr minmax(5rem, 3fr) 1fr;
+  padding: 10px;
+  border-left: 10px solid var(--yellow);
+  border-radius: 8px;
+  box-shadow: 1px 2px 3px var(--gray);
+  background-color: var(--white);
+  color: var(--dark-gray);
+}
+
+.card:hover {
+  background-color: white;
+}
+
+.card-foot {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 5px;
+  justify-content: end;
+}
+
+.card a:hover {
+  color: var(--yellow);
+}
+
+.announcements {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.announcements .card {
+  grid-template-rows: repeat(3, 1fr);
+  padding: 20px;
+  border: none;
+  background-color: var(--white);
+}
+
+.announcements .card>div {
+  margin: 10px;
+  padding: 5px;
+  border-bottom: 1px solid var(--dark-gray);
+}
+
+.announcements .card>div:last-child {
+  border: none;
+}
+
+.trending {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.trending .card {
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+  padding: 20px;
+  border: none;
+  background-color: var(--white);
+}
+
+.trending .card>div {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 10px;
+  align-items: center;
+}
